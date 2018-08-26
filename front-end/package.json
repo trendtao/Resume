@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --port 8888 --open --contentBase src --hot --mode development"
+    "dev": "webpack-dev-server --port 8888 --open --contentBase src --hot --mode development --host 192.168.191.1"
   },
   "repository": {
     "type": "git",

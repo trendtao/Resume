@@ -12,6 +12,7 @@
         position: relative;
         left: -16px;
         top: 7px;
+        height: 43px;
         img{
             width: 100%;
         }
@@ -22,8 +23,6 @@
             color: white;
         }
     }
-
-
 </style>
 
 

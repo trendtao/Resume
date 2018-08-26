@@ -9,6 +9,14 @@
         </div>
         <div class="content">
             <baseinfo></baseinfo>   
+            <education></education>  
+            <work></work>
+            <project></project>
+            <person></person>
+            <evaluation></evaluation>
+            <div class="footimg">
+                <img src="./images/11.png" align="right">
+            </div>
         </div>
     </div>
 </template>
@@ -23,15 +31,20 @@
         -moz-box-shadow:-1px 5px 31px #989090;
         -webkit-box-shadow:-1px 5px 31px #989090;
         box-shadow:-1px 5px 31px #989090;
-        margin-top: 29px;
+        margin-top: 60px;
         border-radius: 4px;
-        height: 700px;
+        margin-bottom: 73px;
     }
     .content{
         margin-left: 62px;
-        border-left: 1.5px solid #00B050;
+        border-left: 1px solid #00B050;
         margin-top: -6px;
-            height: 100%;
+        height: 100%;
+        .footimg{
+            height: 84px;
+            margin-top: 131px;
+        }
+
     }
 
     
@@ -40,6 +53,7 @@
             display: inline;
             color: #00B050;
             margin-left: 26px;
+            
             div:nth-child(1){
                 font-size: 40px;
                 padding-right: 25px;
@@ -61,10 +75,20 @@
 
 <script>
 import baseinfo from "./component/baseinfo.vue"
+import education from "./component/education.vue"
+import work from "./component/work.vue"
+import project from "./component/project.vue"
+import person from "./component/person.vue"
+import evaluation from "./component/evaluation.vue"
 
 export default {
      components: {
         'baseinfo': baseinfo,
+        "education":education,
+        "work":work,
+        "project":project,
+        "person":person,
+        "evaluation":evaluation,
     }
 }
 </script>

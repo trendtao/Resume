@@ -26,7 +26,7 @@
                 </tr>
                 <tr>
                     <td >邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</td>
-                    <td >trendtao168@sina.com</td>
+                    <td ><a class="info" href="mailto:trendtao168@sina.com" title="点我发送邮件">trendtao168@sina.com</a></td>
                     <td >专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</td>
                     <td >计算机科学与技术</td>
                 </tr>
@@ -45,6 +45,11 @@
 .baseinfo{
     .tg .tou{
         width: 80px;
+    }
+
+    .info{
+        color: #000;
+         text-decoration: blink;
     }
 
     table{
