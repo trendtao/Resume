@@ -8,12 +8,12 @@
             <img src="./images/banner.png">
         </div>
         <div class="content">
-            <baseinfo></baseinfo>   
-            <education></education>  
-            <work></work>
-            <project></project>
-            <person></person>
-            <evaluation></evaluation>
+                 <baseinfo class="an"></baseinfo>   
+                 <education class="an"></education>  
+                 <work class="an"></work>
+                 <project class="an"></project>
+                 <person class="an"></person>
+                <evaluation class="an"></evaluation>
             <div class="footimg">
                 <img src="./images/11.png" align="right">
             </div>
@@ -44,7 +44,6 @@
             height: 84px;
             margin-top: 131px;
         }
-
     }
 
     
@@ -71,6 +70,70 @@
         }
 
     }
+
+   .fadeInUp {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+    }
+
+    .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-backface-visibility: hidden;
+    }
+
+     .an1{
+         animation-delay:0.2s
+     }
+     .an2{
+         animation-delay:0.4s
+     }
+     .an3{
+         animation-delay:0.6s
+     }
+     .an4{
+         animation-delay:0.1s
+     }
+     .an5{
+         animation-delay:0.4s
+     }
+     .an6{
+         animation-delay:0.6s
+     }
+
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 10%, 0);
+        transform: translate3d(0, 10%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 10%, 0);
+        transform: translate3d(0, 10%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+
+
 </style>
 
 <script>
@@ -89,6 +152,34 @@ export default {
         "project":project,
         "person":person,
         "evaluation":evaluation,
+    },
+    mounted:function(){
+        this.animateLoading("an")
+    },
+    methods:{
+        animateLoading:function(className){
+            var box = document.getElementsByClassName(className);
+            this.animateListener(box);
+            document.addEventListener('scroll', ()=>{
+                this.animateListener(box);
+            });
+        },
+        animateListener:function(box){
+                //滚动条高度+视窗高度 = 可见区域底部高度
+                var visibleBottom = window.scrollY + document.documentElement.clientHeight;
+                //可见区域顶部高度
+                var visibleTop = window.scrollY;
+                for (var i = 0; i < box.length; i++) {
+                    var centerY = box[i].offsetTop;
+                    if (centerY > visibleTop & centerY < visibleBottom){
+                        let an =  'animated fadeInUp an'+i;
+                        let cla = box[i].getAttribute("class");
+                        if(cla.indexOf("animated") ==-1){
+                            box[i].setAttribute("class", cla+" "+an)
+                        }
+                     }
+                }
+        }
     }
 }
 </script>

@@ -2,7 +2,7 @@
     <div class="banner">
         <div>
             <img src="../images/ban.png">
-            <span>{{name}}</span>
+            <span ref="name">{{name}}</span>
         </div>
     </div>
 </template>
@@ -35,6 +35,19 @@ export default {
     props:{
         "name":String
     },
+    mounted: function(){
+       this.changePosition();
+    },
+    methods:{
+        changePosition() {
+            const USER_AGENT = navigator.userAgent.toLowerCase()
+            const isChrome = /.*(chrome)\/([\w.]+).*/
+            if(!isChrome.test(USER_AGENT)){
+                this.$refs.name.style.top="-32px"
+            }
+        }
+    }
+
 }
 </script>
 
