@@ -1,1 +1,4 @@
 front-end/node_modules/*
+back-end/.idea/*
+back-end/target/*
+back-end/back-end.iml
